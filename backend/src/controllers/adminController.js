@@ -1,6 +1,7 @@
 import Admin from "../models/adminModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import Appointment from "../models/appointmentModel.js";
 
 // POST /api/admin/login
 export const loginAdmin = async (req, res) => {
