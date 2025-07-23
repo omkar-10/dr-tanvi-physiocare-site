@@ -10,9 +10,10 @@ const Header = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
-    { name: "About Us", path: "/about" },
     { name: "Blogs", path: "/blogs" },
     { name: "Gallery", path: "/gallery" },
+    { name: "About Us", path: "/about" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
