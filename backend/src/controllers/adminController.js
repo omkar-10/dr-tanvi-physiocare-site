@@ -62,3 +62,19 @@ export const getAdminProfile = (req, res) => {
     email: req.admin.email,
   });
 };
+
+export const deleteAppointment = async (req, res) => {
+  try {
+    const appointment = await Appointment.findById(req.params.id);
+
+    if (!appointment) {
+      return res.status(404).json({ message: "Appointment not found" });
+    }
+
+    await appointment.deleteOne();
+    res.status(200).json({ message: "Appointment deleted successfully" });
+  } catch (error) {
+    console.error("Delete Appointment Error:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+};

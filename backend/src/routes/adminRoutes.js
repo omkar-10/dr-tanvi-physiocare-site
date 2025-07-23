@@ -27,5 +27,6 @@ router.get("/profile", protect, getAdminProfile);
 router.get("/appointments/all", protect, getAllAppointments);
 router.patch("/appointments/:id/status", protect, updateAppointmentStatus);
 router.get("/dashboard", protect, getAdminStats);
+router.delete("/appointments/:id", protect, deleteAppointment);
 
 export default router;
