@@ -226,7 +226,6 @@ const About = () => {
         </motion.div>
       </div>
       {/* Education Timeline */}
-      // Education & Achievements Section - Clean Version
       <div className="max-w-4xl mx-auto mb-28">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
