@@ -10,6 +10,7 @@ import {
   loginAdmin,
   logoutAdmin,
   getAdminProfile,
+  deleteAppointment,
 } from "../controllers/adminController.js";
 
 const router = express.Router();
