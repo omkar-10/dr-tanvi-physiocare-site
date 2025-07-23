@@ -26,7 +26,10 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/blogs", blogRoutes);
 
-// Global error handler for rate limiting and others
+app.get("/api/ping", (req, res) => {
+  res.status(200).json({ message: "Pong!" });
+});
+
 app.use((err, req, res, next) => {
   if (err.message === "rate-limit") {
     return res.status(429).send(`
