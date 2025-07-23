@@ -12,15 +12,12 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173", // frontend origin
-    credentials: true, // if you're using cookies or sessions
+    origin: "http://localhost:5173",
+    credentials: true,
   })
 );
 app.use(express.json());
 app.use(cookieParser());
-
-// Connect to DB
-connectDB();
 
 // Routes
 app.use("/api/admin", adminRoutes);
@@ -68,8 +65,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Server error" });
 });
 
-// Start server
 const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => {
-  console.log(`✅ Server started on PORT: ${PORT}`);
+
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`✅ Server started on PORT: ${PORT}`);
+  });
 });
