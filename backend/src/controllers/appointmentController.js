@@ -158,7 +158,7 @@ export const bookAppointment = async (req, res) => {
 
     // Send notification to admin
     await sendEmail({
-      to: process.env.MAIL_USER,
+      to: process.env.EMAIL_USER,
       subject: "📋 New Appointment Booking – Dr. Tanvi’s PhysioCare",
       html: `
     <body style="background-color: #ffffff; padding: 40px 0; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 15px; line-height: 1.5; color: #333;">
