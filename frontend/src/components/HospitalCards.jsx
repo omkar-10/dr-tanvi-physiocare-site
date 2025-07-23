@@ -5,7 +5,7 @@ import kamla from "../assets/hospitals/kamla.png";
 import sasoon from "../assets/hospitals/sasoon.png";
 import baba from "../assets/hospitals/baba.png";
 import fortis from "../assets/hospitals/fortis.jpg";
-import kika from "../assets/hospitals/kika.png";
+import kikabai from "../assets/hospitals/kikabai.png";
 import nbc from "../assets/hospitals/nbc.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -55,7 +55,7 @@ const hospitals = [
   },
   {
     name: "Smt. Sushilaben R. Mehta And Sir Kikabhai P. Cardiac Hospital, Mumbai",
-    image: kika,
+    image: kikabai,
     role: "Geriatric Physiotherapy",
     trust: "Improved mobility for 200+ elderly patients",
     delay: 0.6,
