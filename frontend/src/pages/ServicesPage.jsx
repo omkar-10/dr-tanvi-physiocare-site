@@ -80,7 +80,7 @@ const services = [
     title: "Temporomandibular Joint (TMJ) Therapy",
     description:
       "Specialized care for jaw pain, clicking, and movement dysfunctions related to TMJ disorders.",
-    image: "/tmj.jpg",
+    image: "/tmj.png",
     duration: "30-45 mins",
     sessions: "4-6 sessions",
     category: "Specialty",
