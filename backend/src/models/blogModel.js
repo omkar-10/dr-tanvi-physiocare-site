@@ -25,6 +25,14 @@ const blogSchema = new mongoose.Schema(
       type: String,
       default: "Dr. Tanvi",
     },
+    tags: {
+      type: [String], // array of strings
+      default: [],
+    },
+    category: {
+      type: String,
+      default: "General", // can be something like 'Physiotherapy', etc.
+    },
   },
   { timestamps: true }
 );

@@ -4,20 +4,41 @@ import { v2 as cloudinary } from "cloudinary";
 // Create Blog Post (Admin only)
 export const createBlog = async (req, res) => {
   try {
-    const { title, content, author } = req.body;
+    const { title, content, author, category } = req.body;
+
+    let tags = req.body.tags;
+
+    if (typeof tags === "string") {
+      try {
+        tags = JSON.parse(tags);
+      } catch (err) {
+        console.error("Invalid tags format");
+        return res.status(400).json({
+          message: "Tags must be a valid array or stringified array.",
+        });
+      }
+    }
 
     let coverImage = {};
     if (req.file) {
       const result = await cloudinary.uploader.upload(req.file.path, {
         folder: "tanvi-blogs",
       });
+
       coverImage = {
         public_id: result.public_id,
         url: result.secure_url,
       };
     }
 
-    const blog = await Blog.create({ title, content, author, coverImage });
+    const blog = await Blog.create({
+      title,
+      content,
+      author,
+      coverImage,
+      tags,
+      category,
+    });
 
     res.status(201).json({ message: "Blog created", blog });
   } catch (error) {
@@ -50,11 +71,11 @@ export const getBlogBySlug = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
-
 // Update Blog (Admin)
 export const updateBlog = async (req, res) => {
   try {
-    const { title, content } = req.body;
+    const { title, content, tags, category } = req.body;
+
     const blog = await Blog.findOne({ slug: req.params.slug });
 
     if (!blog) {
@@ -63,6 +84,22 @@ export const updateBlog = async (req, res) => {
 
     blog.title = title || blog.title;
     blog.content = content || blog.content;
+
+    // Fix: Parse tags properly
+    let parsedTags = tags;
+    if (typeof tags === "string") {
+      try {
+        parsedTags = JSON.parse(tags);
+      } catch (err) {
+        console.error("Invalid tags format on update");
+        return res.status(400).json({
+          message: "Tags must be a valid array or stringified array.",
+        });
+      }
+    }
+    blog.tags = parsedTags || blog.tags;
+
+    blog.category = category || blog.category;
 
     if (req.file) {
       if (blog.coverImage?.public_id) {

@@ -74,7 +74,15 @@ const EditBlog = () => {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("category", category);
-    formData.append("tags", tags);
+    formData.append(
+      "tags",
+      JSON.stringify(
+        tags
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean)
+      )
+    );
 
     if (coverImage) {
       formData.append("coverImage", coverImage);

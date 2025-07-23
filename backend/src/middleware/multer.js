@@ -1,16 +1,16 @@
 import multer from "multer";
-import path from "path";
+import { CloudinaryStorage } from "multer-storage-cloudinary";
+import cloudinary from "../config/cloudinary.js";
 
-const storage = multer.diskStorage({});
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "tanvi-blogs",
+    allowed_formats: ["jpg", "jpeg", "png"],
+    transformation: [{ width: 1200, height: 800, crop: "limit" }],
+  },
+});
 
-const fileFilter = (req, file, cb) => {
-  const ext = path.extname(file.originalname).toLowerCase();
-  if (ext !== ".jpg" && ext !== ".jpeg" && ext !== ".png") {
-    cb(new Error("Only images are allowed"), false);
-    return;
-  }
-  cb(null, true);
-};
+const upload = multer({ storage });
 
-const upload = multer({ storage, fileFilter });
 export default upload;
