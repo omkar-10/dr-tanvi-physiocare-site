@@ -235,7 +235,7 @@ const BookAppointment = () => {
               value={form.name}
               onChange={handleChange}
               className="input input-bordered w-full pl-10 pr-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="John Doe"
+              placeholder="Enter your full name"
               required
             />
             <User className="absolute left-3 top-3.5 h-4 w-4 text-gray-400" />
@@ -255,7 +255,7 @@ const BookAppointment = () => {
               value={form.phone}
               onChange={handleChange}
               className="input input-bordered w-full pl-10 pr-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="+91 9876543210"
+              placeholder="10-digit mobile number"
               required
             />
             <Phone className="absolute left-3 top-3.5 h-4 w-4 text-gray-400" />
@@ -275,7 +275,7 @@ const BookAppointment = () => {
               value={form.email}
               onChange={handleChange}
               className="input input-bordered w-full pl-10 pr-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="your@email.com"
+              placeholder="Enter a valid email for updates"
               required
             />
             <Mail className="absolute left-3 top-3.5 h-4 w-4 text-gray-400" />
@@ -296,7 +296,7 @@ const BookAppointment = () => {
               minDate={new Date()}
               maxDate={new Date(new Date().setDate(new Date().getDate() + 7))}
               dateFormat="dd/MM/yyyy"
-              placeholderText="Choose a date"
+              placeholderText="Pick your preferred date"
               required
             />
             <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
@@ -317,7 +317,7 @@ const BookAppointment = () => {
                 !form.slot ? "text-gray-400" : "text-gray-800"
               }`}
             >
-              {form.slot || "Select a time slot"}
+              {form.slot || "Choose a convinient time"}
               {showSlotDropdown ? (
                 <ChevronUp className="h-4 w-4 text-gray-500" />
               ) : (
@@ -380,7 +380,7 @@ const BookAppointment = () => {
               onChange={handleChange}
               className="textarea textarea-bordered w-full pl-10 pr-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               rows={3}
-              placeholder="Briefly describe your concern or symptoms"
+              placeholder="Describe your condition (e.g. , knee pain, post-surgery rehab)"
               required
             ></textarea>
             <ClipboardList className="absolute left-3 top-3.5 h-4 w-4 text-gray-400" />

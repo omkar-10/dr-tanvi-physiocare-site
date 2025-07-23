@@ -5,8 +5,20 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [isHoveringInteractive, setIsHoveringInteractive] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    // Check if device is desktop (window width > 768px)
+    const checkIfDesktop = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+
+    // Initial check
+    checkIfDesktop();
+
+    // Add resize listener
+    window.addEventListener("resize", checkIfDesktop);
+
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
 
@@ -24,16 +36,23 @@ const CustomCursor = () => {
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseout", handleMouseLeave);
-    window.addEventListener("mouseover", handleMouseEnter);
+    // Only add mouse event listeners if desktop
+    if (isDesktop) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseout", handleMouseLeave);
+      window.addEventListener("mouseover", handleMouseEnter);
+    }
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseout", handleMouseLeave);
       window.removeEventListener("mouseover", handleMouseEnter);
+      window.removeEventListener("resize", checkIfDesktop);
     };
-  }, [isVisible]);
+  }, [isVisible, isDesktop]);
+
+  // Don't render anything if not desktop
+  if (!isDesktop) return null;
 
   return (
     <motion.div
