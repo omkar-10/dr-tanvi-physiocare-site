@@ -194,7 +194,7 @@ import { Award, BookOpen, Star, Shield, X, Trophy } from "lucide-react";
 const certificateImages = [
   {
     id: 1,
-    image: "https://placehold.co/800x600/e2e8f0/334155?text=Cert+1",
+    image: "/certificates/1.jpg",
     title: "Conference on AI in Physiotherapy",
     issuer: "Goa Medical College, Sancheti Healthcare Academy",
     year: "2024",
@@ -202,7 +202,7 @@ const certificateImages = [
   },
   {
     id: 2,
-    image: "https://placehold.co/800x600/e2e8f0/334155?text=Cert+2",
+    image: "/certificates/2.jpg",
     title: "Advances in Lower Limb Dysfunction Management",
     issuer: "Sancheti Healthcare Academy",
     year: "2023",
@@ -210,7 +210,7 @@ const certificateImages = [
   },
   {
     id: 3,
-    image: "https://placehold.co/800x600/e2e8f0/334155?text=Cert+3",
+    image: "/certificates/3.jpg",
     title: "Breast Cancer Rehabilitation",
     issuer: "Sparsh Health Education & Cancer Foundation",
     year: "2021",
@@ -218,7 +218,7 @@ const certificateImages = [
   },
   {
     id: 4,
-    image: "https://placehold.co/800x600/e2e8f0/334155?text=Cert+4",
+    image: "/certificates/4.jpg",
     title: "Clinical Excellence in Physiotherapy",
     issuer: "DPO’s NETT College of Physiotherapy",
     year: "2021",
@@ -226,7 +226,7 @@ const certificateImages = [
   },
   {
     id: 5,
-    image: "https://placehold.co/800x600/e2e8f0/334155?text=Cert+5",
+    image: "/certificates/5.jpg",
     title: "Physiotherapy Symposium Participation",
     issuer: "Sancheti College of Physiotherapy",
     year: "2023",
@@ -234,7 +234,7 @@ const certificateImages = [
   },
   {
     id: 6,
-    image: "https://placehold.co/800x600/e2e8f0/334155?text=Cert+6",
+    image: "/certificates/6.jpg",
     title: "Operation Restore – Burn Care Camp",
     issuer: "National Burns Centre, Rotary International",
     year: "2023",
@@ -242,7 +242,7 @@ const certificateImages = [
   },
   {
     id: 7,
-    image: "https://placehold.co/800x600/e2e8f0/334155?text=Cert+7",
+    image: "/certificates/7.jpg",
     title: "Therapeutic Taping Workshop",
     issuer: "Institute of Manual Therapy & Taping (IMTT)",
     year: "2021",
