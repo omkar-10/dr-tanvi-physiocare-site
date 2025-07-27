@@ -310,31 +310,3 @@ const SplashScreen = ({ onFinish }) => {
     </AnimatePresence>
   );
 };
-
-// Main App component to demonstrate the splash screen
-export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  return (
-    <div className="antialiased font-sans bg-blue-50 text-blue-900 min-h-screen">
-      {isLoading ? (
-        <SplashScreen onFinish={() => setIsLoading(false)} />
-      ) : (
-        // This is where your main app content will go
-        <div className="p-8 flex flex-col items-center justify-center min-h-screen">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="text-center"
-          >
-            <h1 className="text-4xl font-bold">Welcome to PhysioCare</h1>
-            <p className="mt-2 text-lg text-blue-600">
-              Your main application content starts here.
-            </p>
-          </motion.div>
-        </div>
-      )}
-    </div>
-  );
-}
