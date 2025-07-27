@@ -194,7 +194,7 @@ import { Award, BookOpen, Star, Shield, X, Trophy } from "lucide-react";
 const certificateImages = [
   {
     id: 1,
-    image: "/certificates/1.jpg",
+    image: "/certificates/1.webp",
     title: "Conference on AI in Physiotherapy",
     issuer: "Goa Medical College, Sancheti Healthcare Academy",
     year: "2024",
@@ -202,7 +202,7 @@ const certificateImages = [
   },
   {
     id: 2,
-    image: "/certificates/2.jpg",
+    image: "/certificates/2.webp",
     title: "Advances in Lower Limb Dysfunction Management",
     issuer: "Sancheti Healthcare Academy",
     year: "2023",
@@ -210,7 +210,7 @@ const certificateImages = [
   },
   {
     id: 3,
-    image: "/certificates/3.jpg",
+    image: "/certificates/3.webp",
     title: "Breast Cancer Rehabilitation",
     issuer: "Sparsh Health Education & Cancer Foundation",
     year: "2021",
