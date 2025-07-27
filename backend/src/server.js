@@ -13,7 +13,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://drtanviphysio.vercel.app"],
+    origin: [
+      "http://localhost:5173",
+      "https://drtanviphysio.vercel.app",
+      "https://drtanvisphysiocare.com",
+    ],
     credentials: true,
   })
 );
