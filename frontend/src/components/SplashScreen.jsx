@@ -172,29 +172,23 @@
 
 // export default SplashScreen;
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HeartPulse, Recycle, Accessibility } from "lucide-react";
 
 const SplashScreen = ({ onFinish }) => {
   const [isVisible, setIsVisible] = useState(true);
 
-  // This function will be called when the main animation sequence completes.
   const handleAnimationComplete = () => {
-    // Wait a little longer before finishing to let the user admire the screen
     setTimeout(() => {
       handleFinish();
     }, 1000);
   };
 
-  // Central function to handle the exit transition
   const handleFinish = () => {
     setIsVisible(false);
-    // The `onFinish` callback is triggered after the exit animation completes
-    // thanks to the `AnimatePresence` component's `onExitComplete` prop.
   };
 
-  // Main container variants for orchestrating the animations
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -213,7 +207,6 @@ const SplashScreen = ({ onFinish }) => {
     },
   };
 
-  // Variants for child elements to fade in and move up
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -239,11 +232,9 @@ const SplashScreen = ({ onFinish }) => {
           variants={containerVariants}
           onAnimationComplete={handleAnimationComplete}
         >
-          <div className="flex flex-col items-center justify-center text-center p-8 space-y-8">
-            {/* Animated Logo Image */}
+          <div className="flex flex-col items-center text-center p-8 space-y-8">
             <motion.div variants={itemVariants}>
               <img
-                // IMPORTANT: Replace this placeholder with the path to your actual logo file.
                 src="/logo1.png"
                 alt="Dr. Tanvi's PhysioCare Logo"
                 className="w-28 h-28 object-contain rounded-full shadow-lg"
@@ -255,17 +246,15 @@ const SplashScreen = ({ onFinish }) => {
               />
             </motion.div>
 
-            {/* Animated Title and Subtitle */}
             <motion.div variants={itemVariants} className="space-y-2">
-              <h1 className="text-4xl md:text-5xl font-bold text-blue-900 tracking-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-blue-900">
                 Dr. Tanvi's PhysioCare
               </h1>
               <p className="text-lg text-blue-600 font-medium">
-                Clinically Driven &bull; Functionally Focused
+                Clinically Driven • Functionally Focused
               </p>
             </motion.div>
 
-            {/* Animated Icons */}
             <motion.div
               variants={itemVariants}
               className="flex items-center justify-center gap-8 pt-4"
@@ -275,7 +264,10 @@ const SplashScreen = ({ onFinish }) => {
                   icon: <Recycle className="h-7 w-7" />,
                   text: "Rehabilitation",
                 },
-                { icon: <HeartPulse className="h-7 w-7" />, text: "Wellness" },
+                {
+                  icon: <HeartPulse className="h-7 w-7" />,
+                  text: "Wellness",
+                },
                 {
                   icon: <Accessibility className="h-7 w-7" />,
                   text: "Mobility",
@@ -295,7 +287,6 @@ const SplashScreen = ({ onFinish }) => {
               ))}
             </motion.div>
 
-            {/* Animated "Tap to enter" prompt */}
             <motion.p
               className="absolute bottom-10 text-sm text-blue-500"
               initial={{ opacity: 0 }}
@@ -310,3 +301,5 @@ const SplashScreen = ({ onFinish }) => {
     </AnimatePresence>
   );
 };
+
+export default SplashScreen;
