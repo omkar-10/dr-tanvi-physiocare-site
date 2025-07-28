@@ -21,7 +21,6 @@ const App = () => {
 
   return (
     <>
-      <CustomCursor />
       {!splashDone ? (
         <SplashScreen onFinish={() => setSplashDone(true)} />
       ) : (
