@@ -247,14 +247,15 @@ const About = () => {
         <div className="space-y-8">
           {[
             {
-              year: "2015-2019",
+              year: "2018-2021",
               title: "Bachelor of Physiotherapy (BPT)",
-              description: "University of Pune, First Class with Distinction",
+              description:
+                "Maharashtra University Of Health Sciences, First Class with Distinction",
               icon: <GraduationCap className="text-blue-600" />,
               color: "blue",
             },
             {
-              year: "2019-2021",
+              year: "2023-2025",
               title: "Master of Physiotherapy (MPT)",
               description: "Specialized in Musculoskeletal, Top 5% of class",
               icon: <BookOpen className="text-indigo-600" />,
