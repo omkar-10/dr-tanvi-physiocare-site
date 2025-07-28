@@ -451,7 +451,7 @@ export const updateAppointmentStatus = async (req, res) => {
           <p style="margin: 0 0 15px; font-size: 15px; line-height: 1.6;">
             ${
               status === "Confirmed"
-                ? "Please arrive 10 minutes prior to your scheduled time. Bring any relevant medical reports or scans."
+                ? "Your home physiotherapy session is confirmed. The therapist will arrive at the scheduled time. Kindly ensure medical documents are available and a suitable space is prepared."
                 : status === "Cancelled"
                 ? "If this cancellation was unexpected or you'd like to reschedule, please contact us below."
                 : "Thank you for choosing Dr. Tanvi's PhysioCare. We hope your treatment was beneficial."
