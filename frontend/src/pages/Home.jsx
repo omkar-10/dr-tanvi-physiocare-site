@@ -26,40 +26,56 @@ const Home = () => {
         />
         <link rel="canonical" href="https://drtanvisphysiocare.com/" />
 
-        {/* ✅ Structured Data: Home Visit Physiotherapist */}
+        <meta property="og:title" content="Dr. Tanvi's PhysioCare" />
+        <meta
+          property="og:description"
+          content="Certified physiotherapist specializing in musculoskeletal and orthopedic rehabilitation."
+        />
+        <meta
+          property="og:image"
+          content="https://drtanvisphysiocare.com/logo1.png"
+        />
+        <meta property="og:url" content="https://drtanvisphysiocare.com" />
+        <meta property="og:type" content="website" />
+
         <script type="application/ld+json">
           {`
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Dr. Tanvi B. Dhavale",
-        "jobTitle": "Physiotherapist",
-        "image": "https://res.cloudinary.com/doz6bpin2/image/upload/v1752516027/logo1_z2rwqy.png",
-        "url": "https://drtanvisphysiocare.com/",
-        "description": "Experienced home-visit physiotherapist in Mira Road offering personalized treatment for back pain, neck pain, frozen shoulder, sports injury rehab, and post-surgical recovery.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Mira Road",
-          "addressRegion": "Maharashtra",
-          "addressCountry": "India"
-        },
-        "areaServed": [
-          "Mira Road",
-          "Bhayandar",
-          "Dahisar",
-          "Borivali",
-          "Kandivali",
-          "Mumbai Western Suburbs"
-        ],
-        "makesOffer": {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Home Physiotherapy Services",
-            "description": "Professional physiotherapy at your doorstep – Back pain, joint pain, sports injuries, post-surgical rehab, and more."
-          }
-        }
-      }
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dr. Tanvi B. Dhavale",
+      "jobTitle": "Physiotherapist",
+      "image": "https://drtanvisphysiocare.com/logo1.png",
+      "url": "https://drtanvisphysiocare.com/",
+      "description": "Experienced home-visit physiotherapist in Mira Road offering personalized treatment for back pain, neck pain, frozen shoulder, sports injury rehab, and post-surgical recovery.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mira Road",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "India"
+      },
+      "areaServed": [
+        "Mira Road",
+        "Bhayandar",
+        "Dahisar",
+        "Borivali",
+        "Kandivali",
+        "Mumbai Western Suburbs"
+      ]
+    }
+    `}
+        </script>
+
+        {/* ✅ Structured Data: Organization with Logo */}
+        <script type="application/ld+json">
+          {`
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Dr. Tanvi's PhysioCare",
+      "url": "https://drtanvisphysiocare.com",
+      "logo": "https://drtanvisphysiocare.com/logo1.png"
+    }
     `}
         </script>
       </Helmet>
